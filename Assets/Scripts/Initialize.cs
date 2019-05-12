@@ -9,7 +9,8 @@ public class Initialize : MonoBehaviour {
 		//Set Game Config
 		Screen.SetResolution(800, 480, true);
 
-		PlayData.Instance.cubeColor = "yellow";
+		PlayData.Instance.planeType = "white";
+        Debug.Log(PlayData.Instance.planeType);
 
 		Debug.Log ("HasPlayed : " + PlayerPrefs.GetInt ("HasPlayed"));
 

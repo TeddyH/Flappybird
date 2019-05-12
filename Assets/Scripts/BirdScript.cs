@@ -5,9 +5,10 @@ public class BirdScript : MonoBehaviour {
 
 	// this global variable will be set from the inspector. Represents bird jump force
 	public Vector2 jumpForce = new Vector2();
+    public GameObject explosion;
 
-	// function to be executed once the bird is created
-	void Start () {
+    // function to be executed once the bird is created
+    void Start () {
 		// placing the bird
 		transform.position = new Vector2(-2f,0f);
 	}
@@ -24,20 +25,26 @@ public class BirdScript : MonoBehaviour {
 		// getting the real position, in pixels, of the bird on the stage
 		Vector2 stagePos = Camera.main.WorldToScreenPoint(transform.position);
 		// if the bird leaves the stage...
-		if (stagePos.y > Screen.height || stagePos.y < 0){
+		//if (stagePos.y > Screen.height || stagePos.y < 0){
 			// ... call die function
-			die();
-		}
+		//	die();
+		//}
 	}
 
 	// function to be executed once the bird enters in collision with anything
-	void OnCollisionEnter2D(){
-		// call die function
-		die();
+	void OnCollisionEnter2D(Collision2D collision){
+
+        // call die function
+        Debug.Log(collision);
+        if (PlayData.Instance.dead.Equals(false)) {
+            PlayData.Instance.dead = true;
+            die();
+        }
 	}
 	
 	void die(){
-		// reload the current scene - actually restart the game
-		//Application.LoadLevel(Application.loadedLevel);
-	}
+        // reload the current scene - actually restart the game
+        //Application.LoadLevel(Application.loadedLevel);
+        Instantiate(explosion, transform.position, Quaternion.identity);
+    }
 }

@@ -5,7 +5,7 @@ public class objectColor : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		string color = PlayData.Instance.cubeColor;
+		string color = PlayData.Instance.planeType;
 
 		if (color == null) {
 			gameObject.GetComponent<Renderer> ().materials [0].color = Color.yellow;
