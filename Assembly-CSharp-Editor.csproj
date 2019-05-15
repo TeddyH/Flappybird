@@ -70,7 +70,6 @@
     <Compile Include="Assets\GooglePlayGames\Editor\GPGSUpgrader.cs" />
     <Compile Include="Assets\GooglePlayGames\Editor\GPGSUtil.cs" />
     <Compile Include="Assets\GooglePlayGames\Editor\NearbyConnectionUI.cs" />
-    <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.105.0.txt" />
     <None Include="Assets\GooglePlayGames\Editor\GooglePlayGamesPluginDependencies.xml" />
     <None Include="Assets\GooglePlayGames\Editor\template-GameInfo.txt" />
     <None Include="Assets\GooglePlayGames\Editor\template-AndroidManifest.txt" />
@@ -310,18 +309,6 @@
     </Reference>
     <Reference Include="LitJson">
       <HintPath>D:/Workspace/Flappybird/Assets/Lib/LitJson.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.IOSResolver_v1.2.105.0">
-      <HintPath>D:/Workspace/Flappybird/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.105.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.JarResolver_v1.2.105.0">
-      <HintPath>D:/Workspace/Flappybird/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.105.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandler">
-      <HintPath>D:/Workspace/Flappybird/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.105.0">
-      <HintPath>D:/Workspace/Flappybird/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.105.0.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>D:/Workspace/Flappybird/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>

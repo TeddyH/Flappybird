@@ -1,17 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using GooglePlayGames;
-using GooglePlayGames.BasicApi;
+
 
 public class Login : MonoBehaviour {
 
     [SerializeField] private Text txtLog;
 
     private void Awake() {
-        PlayGamesPlatform.InitializeInstance(new PlayGamesClientConfiguration.Builder().Build());
-        PlayGamesPlatform.DebugLogEnabled = true;
-        PlayGamesPlatform.Activate();
+
     }
 
     public void OnBtnLoginClicked() {

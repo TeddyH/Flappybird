@@ -25,8 +25,23 @@ public class MainScript : MonoBehaviour {
 
 	// function called by InvokeRepeating function
 	void CreateObstacle(){
-		// generating random upper pipe position
-		float randomPos = 4f-(4f-0.8f-pipeHole)*Random.value;
+        if(PlayData.Instance.score < 10) {
+            pipeHole = 2.2f;
+        } else if(PlayData.Instance.score < 20) {
+            pipeHole = 2.0f;
+        } else if (PlayData.Instance.score < 30) {
+            pipeHole = 1.8f;
+        } else if (PlayData.Instance.score < 40) {
+            pipeHole = 1.7f;
+        } else if (PlayData.Instance.score < 50) {
+            pipeHole = 1.6f;
+        } else {
+            pipeHole = 1.5f;
+        }
+
+        // generating random upper pipe position
+        //float randomPos = 4f-(4f-0.8f-pipeHole)*Random.value;
+        float randomPos = 4.8f - (4.8f - 0.2f - pipeHole) * Random.value;
 		// adding upper pipe to stage
 		GameObject upperPipe = Instantiate(pipeObject);
 		// setting upper pipe position
@@ -34,9 +49,10 @@ public class MainScript : MonoBehaviour {
 		// adding lower pipe to stage
 		GameObject lowerPipe = Instantiate(pipeObject);
 		// setting lower pipe position
-		lowerPipe.transform.position = new Vector2(4f,randomPos-pipeHole-4.8f);
+		//lowerPipe.transform.position = new Vector2(4f,randomPos-pipeHole-4.8f);
+        lowerPipe.transform.position = new Vector2(4f, randomPos - pipeHole - 4.9f);
 
-        if(PlayData.Instance.dead == false) {
+        if (PlayData.Instance.dead == false) {
             PlayData.Instance.score++;
             SetScore();
         }
